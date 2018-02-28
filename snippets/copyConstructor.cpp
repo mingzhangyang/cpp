@@ -12,11 +12,16 @@ class Complex {
   ~Complex();
 };
 
-Complex::Complex(double r, double i) {
-  real = r;
-  image = i;
+// Complex::Complex(double r, double i) {
+//   real = r;
+//   image = i;
+//   cout << "constructor I invoked" << endl;
+// }
+
+Complex::Complex(double r, double i) : real(r), image(i) {
   cout << "constructor I invoked" << endl;
 }
+
 Complex::Complex() {
   real = 0; image = 0;
   cout << "constructor II invokded" << endl;
@@ -38,7 +43,13 @@ Complex::~Complex() {
 int main() {
   // Complex c;
   // Complex c(1, 2);
-  Complex c = 1;
+  // Complex c = 1;
+  Complex * c;
+  c = new Complex(3, 4);
+  cout << c->real << endl;
+  delete c;
+  int i;
+  cout << ++i << endl;
   // cout << c << endl;
   // cout << typeid(c).name() << endl;
   // cout << typeid(c1).name() << endl;
